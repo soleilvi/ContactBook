@@ -1,3 +1,8 @@
+/*
+The Entry class is used to store the dictionary values. This class 
+definition was provided to us by the professor.
+*/
+
 #ifndef ENTRY_H
 #define ENTRY_H
 

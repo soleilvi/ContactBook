@@ -1,3 +1,10 @@
+/*
+Method definitions for the Entry class.
+
+By Soleil Vivero
+12/10/22
+*/
+
 #include "Entry.h"
 
 template<class KeyType, class ValueType>

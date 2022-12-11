@@ -1,3 +1,7 @@
+/*
+Dictionary interface provided to us by the professor.
+*/
+
 #ifndef DICTIONARY_INTERFACE
 #define DICTIONARY_INTERFACE
 

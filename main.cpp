@@ -1,3 +1,13 @@
+/*
+This program was meant as practice for working with dictionaries. I
+implemented a dictionary using a binary search tree and used it to
+make a small program for storing contacts. It has no GUI; it runs in
+the terminal. Type "make" and "./hw8" into the terminal to run it.
+
+By Soleil Vivero
+12/10/22
+*/
+
 #include <iostream>
 #include <string>
 
@@ -10,8 +20,8 @@ using namespace std;
 
 int main() 
 {
-    TreeDictionary<string, string> contactBook;  // Int will turn into a phone class/struct
-    string keys[ARR_CAPACITY - 1];
+    TreeDictionary<string, string> contactBook;
+    string keys[ARR_CAPACITY - 1];  // Stores the names of the people the user passes in
     bool run = true;
     int usrInput;
 
@@ -42,7 +52,7 @@ int main()
             break;
 
         case 4:
-            removeContact(contactBook);
+            removeContact(contactBook, keys);
             break;
 
         case 5:
@@ -50,7 +60,7 @@ int main()
             break;
         
         default:
-            cout << "Invalid input, please try again.\n";
+            cout << "Invalid input, please try again.\n\n";
             break;
         }
     }

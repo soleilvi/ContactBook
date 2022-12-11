@@ -1,3 +1,11 @@
+/*
+Implementation of the DictionaryInterface using a binary search tree
+to store entries.
+
+By Soleil Vivero
+12/10/22
+*/
+
 #ifndef TREE_DICTIONARY
 #define TREE_DICTIONARY
 
