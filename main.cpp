@@ -1,36 +1,57 @@
 #include <iostream>
 #include <string>
+
+#include "functions.cpp"
 #include "TreeDictionary.h"
+
+#define ARR_CAPACITY 100
 
 using namespace std;
 
 int main() 
 {
-    TreeDictionary<int, string> d;
-    int keyWeWant = 125678;
+    TreeDictionary<string, string> contactBook;  // Int will turn into a phone class/struct
+    string keys[ARR_CAPACITY - 1];
+    bool run = true;
+    int usrInput;
 
-    cout << (d.isEmpty() ? "Dictionary is empty" : "Dictionary is not empty") << endl;
-    cout << "The number of entries in the dictionary is " << d.getNumberOfEntries() << ".\n";
+    cout << "Welcome to your contact book.\n\n";
 
-    d.add(701283, "foo");
-    d.add(125678, "bar");
-    d.add(829474, "idk");
+    while(run)
+    {
+        printInstructions();
+        cout << "Select your choice: ";
+        cin >> usrInput;
 
-    cout << (d.isEmpty() ? "Dictionary is empty" : "Dictionary is not empty") << endl;
-    cout << "The number of entries in the dictionary is " << d.getNumberOfEntries() << ".\n";
+        switch (usrInput)
+        {
+        case 0:
+            run = false;
+            break;
 
-    // REMOVING ENTRIES
-    d.remove(701283);
-    d.remove(829474);
-    cout << "The number of entries in the dictionary is " << d.getNumberOfEntries() << ".\n";
+        case 1:
+            addContact(contactBook, keys);
+            break;
+        
+        case 2:
+            editContact(contactBook);
+            break;
+        
+        case 3:
+            displayPhoneNumber(contactBook);
+            break;
 
-    // KEY WE WANT
-    cout << (d.contains(keyWeWant) ? "Contains value." : "Does not contain value.") << endl;
-    cout << "Entry: " << d.getValue(keyWeWant) << endl;
+        case 4:
+            removeContact(contactBook);
+            break;
 
-    // CLEARING THE DICTIONARY
-    d.clear();
-    cout << (d.isEmpty() ? "Dictionary is empty" : "Dictionary is not empty") << endl;
-    cout << "The number of entries in the dictionary is " << d.getNumberOfEntries() << ".\n";
-
+        case 5:
+            displayContacts(contactBook, keys);
+            break;
+        
+        default:
+            cout << "Invalid input, please try again.\n";
+            break;
+        }
+    }
 }
